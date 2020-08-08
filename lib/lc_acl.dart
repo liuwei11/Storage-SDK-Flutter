@@ -94,28 +94,28 @@ class LCACL {
   }
 
   bool getRoleReadAccess(String roleName) {
-    if (role == null) {
+    if (roleName == null) {
       throw ArgumentError.notNull('role');
     }
     return _getAccess(readAccess, '$RoleKeyPrefix${roleName}');
   }
 
   void setRoleReadAccess(String roleName, bool value) {
-    if (role == null) {
+    if (roleName == null) {
       throw ArgumentError.notNull('role');
     }
     _setAccess(readAccess, '$RoleKeyPrefix${roleName}', value);
   }
 
   bool getRoleWriteAccess(String roleName) {
-    if (role == null) {
+    if (roleName == null) {
       throw ArgumentError.notNull('role');
     }
     return _getAccess(writeAccess, '$RoleKeyPrefix${roleName}');
   }
 
   void setRoleWriteAccess(String roleName, bool value) {
-    if (role == null) {
+    if (roleName == null) {
       throw ArgumentError.notNull('role');
     }
     _setAccess(writeAccess, '$RoleKeyPrefix${roleName}', value);
