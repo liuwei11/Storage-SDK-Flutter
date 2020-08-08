@@ -93,32 +93,32 @@ class LCACL {
     setUserIdWriteAccess(user.objectId, value);
   }
 
-  bool getRoleReadAccess(LCRole role) {
+  bool getRoleReadAccess(String roleName) {
     if (role == null) {
       throw ArgumentError.notNull('role');
     }
-    return _getAccess(readAccess, '$RoleKeyPrefix${role.name}');
+    return _getAccess(readAccess, '$RoleKeyPrefix${roleName}');
   }
 
-  void setRoleReadAccess(LCRole role, bool value) {
+  void setRoleReadAccess(String roleName, bool value) {
     if (role == null) {
       throw ArgumentError.notNull('role');
     }
-    _setAccess(readAccess, '$RoleKeyPrefix${role.name}', value);
+    _setAccess(readAccess, '$RoleKeyPrefix${roleName}', value);
   }
 
-  bool getRoleWriteAccess(LCRole role) {
+  bool getRoleWriteAccess(String roleName) {
     if (role == null) {
       throw ArgumentError.notNull('role');
     }
-    return _getAccess(writeAccess, '$RoleKeyPrefix${role.name}');
+    return _getAccess(writeAccess, '$RoleKeyPrefix${roleName}');
   }
 
-  void setRoleWriteAccess(LCRole role, bool value) {
+  void setRoleWriteAccess(String roleName, bool value) {
     if (role == null) {
       throw ArgumentError.notNull('role');
     }
-    _setAccess(writeAccess, '$RoleKeyPrefix${role.name}', value);
+    _setAccess(writeAccess, '$RoleKeyPrefix${roleName}', value);
   }
 
   bool _getAccess(Map<String, bool> access, String key) {
